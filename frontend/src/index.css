@@ -1,13 +1,27 @@
+/* Makes text look sharper on Mac */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Scroll reveal base */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
 }
+
+/* When visible */
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional directions */
+.reveal-left { transform: translateX(-18px); }
+.reveal-right { transform: translateX(18px); }
+.reveal-left.show, .reveal-right.show { transform: translateX(0); }
+
+/* Smooth scroll for anchor links */
+html { scroll-behavior: smooth; }
