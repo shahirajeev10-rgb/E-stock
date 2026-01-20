@@ -1,30 +1,34 @@
 import React from 'react';
 
 function Hero() {
-    return (
-        <div className='container' p-5>
-          <div className='row' style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center', 
-            textAlign: 'center' 
-          }}>
-            <img src='/media/img1.jpg' alt='Hero image' 
-              style={{
-                width: '100%',
-                maxWidth: '600px',
-                height: 'auto',
-                borderRadius: '10px',
-                marginBottom: '2rem',
-                boxShadow: '0 5px 20px rgba(0,0,0,0.1)'
-              }}
-            />
-            <h1 className='mt-5'>Grow Your Wealth, Secure Your Dream</h1>
-            <p>Platform to learn stock market and trading</p>
-            <button classNmae='p-3 btn btn-primary' style={{width:"15%", margin:"0 auto"}} >Signup Now</button>
-          </div>
+  return (
+    <div className="container p-5">
+      <div className="row justify-content-center text-center">
+        <div className="col-12 col-md-8">
+
+          <img
+            src="/media/img1.jpg"
+            alt="Stock learning illustration"
+            className="img-fluid mb-4 rounded-3 shadow"
+            style={{ maxHeight: "420px", objectFit: "contain" }}
+          />
+
+          <h1 className="fw-bold mt-4">
+            Grow Your Wealth, Secure Your Dream
+          </h1>
+
+          <p className="text-muted mt-3">
+            Platform to learn stock market and trading
+          </p>
+
+          <button className="btn btn-primary btn-lg mt-3">
+            Sign Up Now
+          </button>
+
         </div>
-      );
+      </div>
+    </div>
+  );
 }
 
 export default Hero;
