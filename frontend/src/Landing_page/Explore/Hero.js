@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useReveal from "../../hooks/useReveal";
 
 function Hero() {
@@ -15,6 +16,8 @@ function Hero() {
       <div className="container">
         <div className="row justify-content-center text-center">
           <div className="col-12 col-md-9 col-lg-7">
+
+            {/* Hero Image */}
             <img
               src="/media/img1.jpg"
               alt="Stock learning illustration"
@@ -26,18 +29,22 @@ function Hero() {
               }}
             />
 
+            {/* Heading */}
             <h1 className="fw-bold mt-3" style={{ lineHeight: "1.2" }}>
               Grow Your Wealth, <br />
               <span className="text-primary">Secure Your Dream</span>
             </h1>
 
+            {/* Subtitle */}
             <p className="text-muted mt-3 fs-5">
               Learn stock market fundamentals through guided lessons and
               risk-free trading practice.
             </p>
 
+            {/* CTA Buttons */}
             <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
-              <button
+              <Link
+                to="/signup"
                 className="btn btn-primary btn-lg px-4"
                 style={{ transition: "all 0.25s ease" }}
                 onMouseEnter={(e) => {
@@ -51,30 +58,43 @@ function Hero() {
                 }}
               >
                 Sign Up Free
-              </button>
+              </Link>
 
-              <a href="#stats" className="btn btn-outline-secondary btn-lg px-4">
+              <a
+                href="#stats"
+                className="btn btn-outline-secondary btn-lg px-4"
+              >
                 Explore Learning
               </a>
             </div>
 
+            {/* Trust Indicators */}
             <div className="d-flex justify-content-center gap-4 mt-5 text-muted small flex-wrap">
               <span>✔ Beginner Friendly</span>
               <span>✔ Risk-Free Simulation</span>
               <span>✔ No Real Money Required</span>
             </div>
 
+            {/* Scroll Hint */}
             <div className="mt-4 text-muted small">
               Scroll to see how eStock works ↓
             </div>
+
           </div>
         </div>
       </div>
 
+      {/* Animation */}
       <style>{`
         @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
     </section>
