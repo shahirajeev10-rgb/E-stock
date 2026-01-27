@@ -1,6 +1,6 @@
 import React from 'react';
 import Hero from './Hero';
-import Awards from './Awards';
+import WhyEstockGlow from "./WhyEstockGlow";
 import Stats from './Stats';
 import Price from './Price';
 import Education from './Education';
@@ -13,7 +13,7 @@ function Homepage() {
         <>
           <Navbaar />
           <Hero />
-          <Awards />
+          <WhyEstockGlow />
           <Stats />
           <Price />
           <Education />
