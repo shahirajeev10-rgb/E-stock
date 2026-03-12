@@ -1,0 +1,21 @@
+<svg width="720" height="220" viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="220" rx="36" fill="white"/>
+  <rect x="28" y="28" width="164" height="164" rx="38" fill="url(#paint0_linear_315_2)"/>
+  <path d="M62 146H158" stroke="rgba(255,255,255,0.22)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 116H158" stroke="rgba(255,255,255,0.18)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 86H158" stroke="rgba(255,255,255,0.14)" stroke-width="8" stroke-linecap="round"/>
+  <rect x="72" y="114" width="18" height="32" rx="9" fill="white" fill-opacity="0.82"/>
+  <rect x="102" y="94" width="18" height="52" rx="9" fill="white" fill-opacity="0.88"/>
+  <rect x="132" y="72" width="18" height="74" rx="9" fill="white" fill-opacity="0.96"/>
+  <path d="M74 118L110 96L141 78L157 61" stroke="#D8FFE8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M147 61H157V71" stroke="#D8FFE8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="224" y="102" fill="#0F172A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="82" font-weight="800" letter-spacing="-2">eStock</text>
+  <text x="228" y="144" fill="#16A34A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3">LEARN THE MARKET</text>
+  <defs>
+    <linearGradient id="paint0_linear_315_2" x1="28" y1="28" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E"/>
+      <stop offset="0.5" stop-color="#16A34A"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+</svg>

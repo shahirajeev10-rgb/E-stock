@@ -44,9 +44,10 @@ function Navbar() {
           {/* Logo */}
           <Link className="navbar-brand d-flex align-items-center gap-2" to="/home">
             <img
-              src="/media/Logo.png"
+              src="/media/estock-chart-logo.svg"
               alt="eStock Logo"
-              style={{ height: "52px", width: "auto", objectFit: "contain" }}
+              className="navLogo"
+              style={{ width: "auto", objectFit: "contain" }}
             />
           </Link>
 
@@ -187,13 +188,17 @@ function Navbar() {
       </nav>
 
       {/* Prevent content hiding under fixed navbar */}
-      <div style={{ height: "78px" }} />
+      <div style={{ height: "88px" }} />
 
       {/* Login Modal */}
       <Login show={showLogin} onClose={() => setShowLogin(false)} />
 
       <style>{`
         html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+        .navLogo{
+          height: 70px;
+        }
 
         .navHover { position: relative; transition: color .2s ease; }
         .navHover:hover { color: #2f6fed !important; }
@@ -260,6 +265,12 @@ function Navbar() {
           font-weight: 700;
           color: rgba(0,0,0,0.70);
           font-size: 13px;
+        }
+
+        @media (max-width: 991px){
+          .navLogo{
+            height: 58px;
+          }
         }
       `}</style>
     </>
