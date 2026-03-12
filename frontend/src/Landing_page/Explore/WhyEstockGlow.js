@@ -1,9 +1,15 @@
 import React from "react";
 import "./WhyEstockGlow.css";
+import useReveal from "../../hooks/useReveal";
 
 export default function WhyEstockGlow() {
+  const { ref, visible } = useReveal();
+
   return (
-    <section className="whyGlow-wrap py-5">
+    <section
+      ref={ref}
+      className={`whyGlow-wrap py-5 reveal ${visible ? "show" : ""}`}
+    >
       <div className="container">
         <div className="row align-items-center g-5">
           {/* Left text */}

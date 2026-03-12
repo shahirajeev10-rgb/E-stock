@@ -1,8 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import useReveal from "../../hooks/useReveal";
 
 function Stats() {
+  const { ref, visible } = useReveal();
+
   return (
-    <section className="py-5" style={{ background: "linear-gradient(135deg,#f7f9fc,#eef4ff)" }}>
+    <section
+      id="stats"
+      ref={ref}
+      className={`py-5 reveal ${visible ? "show" : ""}`}
+      style={{ background: "linear-gradient(135deg,#f7f9fc,#eef4ff)" }}
+    >
       <div className="container">
         <div className="row align-items-center g-5">
           
@@ -27,19 +36,19 @@ function Stats() {
             {/* Quick stats (unique + professional) */}
             <div className="row g-3 mb-4">
               <div className="col-12 col-sm-4">
-                <div className="bg-white rounded-4 shadow-sm p-3 text-center">
+                <div className="bg-white rounded-4 shadow-sm p-3 text-center statQuickCard">
                   <div className="fw-bold fs-5">10+</div>
                   <div className="text-muted small">Learning Modules</div>
                 </div>
               </div>
               <div className="col-12 col-sm-4">
-                <div className="bg-white rounded-4 shadow-sm p-3 text-center">
+                <div className="bg-white rounded-4 shadow-sm p-3 text-center statQuickCard">
                   <div className="fw-bold fs-5">0%</div>
                   <div className="text-muted small">Real-Money Risk</div>
                 </div>
               </div>
               <div className="col-12 col-sm-4">
-                <div className="bg-white rounded-4 shadow-sm p-3 text-center">
+                <div className="bg-white rounded-4 shadow-sm p-3 text-center statQuickCard">
                   <div className="fw-bold fs-5">Step-by-step</div>
                   <div className="text-muted small">Guided Journey</div>
                 </div>
@@ -68,19 +77,7 @@ function Stats() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-3 bg-white rounded-4 shadow-sm"
-                  style={{
-                    transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                    cursor: "default"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-4px)";
-                    e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,0,0,0.10)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "";
-                  }}
+                  className={`p-3 bg-white rounded-4 shadow-sm statFeatureCard ${visible ? "isIn" : ""}`}
                 >
                   <div className="fw-semibold">{item.title}</div>
                   <div className="text-muted small">{item.desc}</div>
@@ -90,12 +87,12 @@ function Stats() {
 
             {/* CTA */}
             <div className="mt-4 d-flex gap-2 flex-wrap">
-              <button className="btn btn-primary btn-lg px-4">
+              <Link to="/home#education" className="btn btn-primary btn-lg px-4">
                 Start Learning
-              </button>
-              <button className="btn btn-outline-secondary btn-lg px-4">
+              </Link>
+              <Link to="/demo/price-movement" className="btn btn-outline-secondary btn-lg px-4">
                 Try Simulation
-              </button>
+              </Link>
             </div>
 
             {/* Unique line (small but nice) */}
@@ -122,6 +119,59 @@ function Stats() {
 
         </div>
       </div>
+
+      <style>{`
+        .statQuickCard{
+          transition: transform 220ms ease, box-shadow 220ms ease;
+        }
+
+        .statQuickCard:hover{
+          transform: translateY(-3px);
+          box-shadow: 0 16px 34px rgba(15,23,42,0.12) !important;
+        }
+
+        .statFeatureCard{
+          cursor: default;
+          transition: transform 220ms ease, box-shadow 220ms ease;
+        }
+
+        .statFeatureCard:hover{
+          transform: translateY(-4px);
+          box-shadow: 0 14px 34px rgba(15,23,42,0.12) !important;
+        }
+
+        .statFeatureCard.isIn{
+          animation: statCardIn 480ms ease both;
+        }
+
+        .statFeatureCard.isIn:nth-child(2){ animation-delay: 80ms; }
+        .statFeatureCard.isIn:nth-child(3){ animation-delay: 160ms; }
+        .statFeatureCard.isIn:nth-child(4){ animation-delay: 240ms; }
+
+        @keyframes statCardIn{
+          from{
+            opacity: 0;
+            transform: translateY(16px);
+          }
+          to{
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce){
+          .statFeatureCard.isIn{
+            animation: none !important;
+          }
+          .statQuickCard,
+          .statQuickCard:hover,
+          .statFeatureCard,
+          .statFeatureCard:hover{
+            transition: none;
+            transform: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }

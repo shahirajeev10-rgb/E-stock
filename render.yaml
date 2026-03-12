@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: estock-backend
+    env: node
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URL
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: CLIENT_URLS
+        sync: false
+      - key: COOKIE_SAME_SITE
+        value: none
+      - key: COOKIE_SECURE
+        value: true
+      - key: PASSWORD_RESET_MODE
+        value: smtp
+      - key: PASSWORD_RESET_URL
+        sync: false
+      - key: APP_NAME
+        value: eStock
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_SECURE
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: MAIL_FROM
+        sync: false
