@@ -1,6 +1,23 @@
-const API_BASE = (
-  process.env.REACT_APP_API_URL || "http://localhost:3002"
-).replace(/\/+$/, "");
+const configuredApiBase = String(process.env.REACT_APP_API_URL || "").replace(
+  /\/+$/,
+  ""
+);
+
+function resolveApiBase() {
+  if (typeof window === "undefined") {
+    return configuredApiBase || "http://localhost:3002";
+  }
+
+  const isLocalHost = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+
+  if (process.env.NODE_ENV === "production" && !isLocalHost) {
+    return "";
+  }
+
+  return configuredApiBase || "http://localhost:3002";
+}
+
+const API_BASE = resolveApiBase();
 
 function withQuery(path, extraParams = {}) {
   const params = new URLSearchParams();
