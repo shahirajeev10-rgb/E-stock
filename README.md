@@ -6,11 +6,11 @@ eStock is an interactive web-based learning platform for beginner stock trading 
 
 Live website:
 
-- [e-stock-vert.vercel.app](https://e-stock-vert.vercel.app)
+- [Live Website](https://e-stock-vert.vercel.app)
 
 Live backend health check:
 
-- [estock-backend-umho.onrender.com/health](https://estock-backend-umho.onrender.com/health)
+- [Backend Health Check](https://estock-backend-umho.onrender.com/health)
 
 ## Project Structure
 
